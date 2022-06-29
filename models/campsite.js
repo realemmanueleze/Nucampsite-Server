@@ -16,8 +16,8 @@ const commentSchema = new Schema({
         required: true
     },
     author: {
-        type: String,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     }
 }, {
     timestamps: true
@@ -70,4 +70,6 @@ const campsiteSchema = new Schema({
     timestamps: true
 });
 
-module.exports = campsiteSchema
+const Campsite  = mongoose.model('Campsite', campsiteSchema);
+
+module.exports = Campsite
