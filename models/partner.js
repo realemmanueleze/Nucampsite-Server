@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
-const partnerSchema = new Schema({
+const parnterSchema = new Schema ({
     name: {
         type: String,
         required: true,
@@ -10,7 +9,7 @@ const partnerSchema = new Schema({
     },
     image: {
         type: String,
-        required: true
+        required: true,
     },
     featured: {
         type: Boolean,
@@ -20,9 +19,10 @@ const partnerSchema = new Schema({
         type: String,
         required: true
     }
-}, {timestamps: true
+}, {
+    timestamps: true
 });
 
-const Partner = mongoose.model('Partner', partnerSchema);
+const Partner = mongoose.model('Partner', parnterSchema);
 
 module.exports = Partner;
